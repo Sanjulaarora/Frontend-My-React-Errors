@@ -31,8 +31,8 @@ const About = () => {
         <p className="font-pacifico text-xl media426:text-2xl media769:text-3xl text-gray-500 mt-12 media426:mt-60 ml-28 media426:ml-14 media769:ml-24">or</p>
         <div id="contact via" className="flex flex-col justify-center items-center space-y-4 mt-8 media426:mt-24 ml-[72px] media426:ml-[88px] media769:ml-32 h-48 media426:h-56 media769:h-72 w-28 media426:w-32 media769:w-48 rounded-xl shadow-2xl" >
           <p className="font-anton text-[#56463c] text-xs media426:text-sm media769:text-lg"> We can connect via </p>
-          <a href="https://www.linkedin.com/in/sanjula-arora-30927b244"><img className="bg-[#56463c] h-12 media426:h-16 media769:h-20 w-12 media426:w-16 media769:w-20 rounded-md hover:scale-110" src={LinkedIn} alt="linkedin" /></a>
-          <a href="https://github.com/Sanjulaarora"><img className="bg-[#56463c] h-12 media426:h-16 media769:h-20 w-12 media426:w-16 media769:w-20 rounded-md hover:scale-110" src={GitHub} alt="github" /></a>
+          <a href="https://www.linkedin.com/in/sanjula-arora-30927b244" target="_blank" rel="noreferrer"><img className="bg-[#56463c] h-12 media426:h-16 media769:h-20 w-12 media426:w-16 media769:w-20 rounded-md hover:scale-110" src={LinkedIn} alt="linkedin" /></a>
+          <a href="https://github.com/Sanjulaarora" target="_blank" rel="noreferrer"><img className="bg-[#56463c] h-12 media426:h-16 media769:h-20 w-12 media426:w-16 media769:w-20 rounded-md hover:scale-110" src={GitHub} alt="github" /></a>
         </div>
       </section>   
     </main>
