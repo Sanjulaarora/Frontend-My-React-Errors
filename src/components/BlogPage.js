@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCalendar, FaBug } from 'react-icons/fa6';
+import { FaCalendar, FaBug, FaPenToSquare } from 'react-icons/fa6';
 import { useParams, Link, useHistory } from 'react-router-dom';
 import { useContext } from 'react';
 import api from 'axios';
@@ -36,7 +36,7 @@ const BlogPage = () => {
            <p className="flex font-anton text-[#56463c] p-2 media769:p-1 text-xs media426:text-base"><FaCalendar className="mt-1" /> { blog.datetime }</p>
            <div id="problem & solution" className="h-[480px] media426:h-[450px] lg:h-[400px] shadow-xl p-1">
               <p className="flex font-anton text-xs media426:text-lg media769:text-xl text-slate-700 text-center m-2 lg:m-4"><FaBug className="text-3xl" /> { blog.body }</p>
-              <p className="flex font-anton text-xs media426:text-sm media769:text-lg text-slate-600 text-center m-2 lg:m-4">{ blog.solution }</p>
+              <p className="flex font-anton text-xs media426:text-sm media769:text-lg text-slate-600 text-center m-2 lg:m-4"><FaPenToSquare className="text-8xl pb-16" /> { blog.solution }</p>
            </div>
            <div id="option-buttons" className="flex justify-between mt-20">
               <Link to={`/edit/${blog.id}`}><button className="font-anton text-[#F2E9E4] text-xs media426:text-lg media769:text-xl bg-[#56463c] rounded-md h-9 media426:h-20 w-[74px] media426:w-16 media769:w-32 p-1 media426:p-2 media769:p-1 shadow-md hover:underline hover:scale-110">Edit Blog!</button></Link>
