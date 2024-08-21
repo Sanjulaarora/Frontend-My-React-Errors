@@ -6,7 +6,7 @@ import api from 'axios';
 import AppContext from '../context/AppContext';
 
 const NewBlog = () => {
-  const[blogTitle, setBlogTitle] =useState('');
+  const[blogTitle, setBlogTitle] = useState('');
   const[blogBody, setBlogBody] = useState('');
   const[blogSolution, setBlogSolution] = useState('');
   const history = useHistory();
