@@ -27,7 +27,7 @@ const Banner = () => {
   };
 
   return (
-    <section id="banner" className="h-36 media426:h-40 rounded-lg" style={{backgroundImage:`url(${background})`}}>
+    <section id="banner" className="h-36 media426:h-40 rounded-lg" style={{backgroundImage:`url(${background})`, loading:'lazy'}}>
       <AliceCarousel
         mouseTracking
         infinite

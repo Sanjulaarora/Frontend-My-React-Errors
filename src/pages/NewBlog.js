@@ -26,7 +26,8 @@ const NewBlog = () => {
       setBlogCategory('');
       history.push('/');
       Success('Blog is posted successfully!');
-    } catch(err) {
+    } 
+    catch(err) {
       console.log(`Error: ${err.message}`);
       Error('Something went wrong !');
     }

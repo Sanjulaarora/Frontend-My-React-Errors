@@ -45,7 +45,7 @@ const EditBlog = () => {
 
   return (
     <main id="edit-blog" className="min-h-screen overflow-y-auto container py-6 media769:py-8 mt-3">
-        {editTitle && 
+      {editTitle && 
             <>
                 <h1 className="font-anton text-[#56463c] text-md media426:text-2xl media769:text-3xl text-center"> Edit Blog </h1>
                 <form id="editBlogForm" onSubmit={(e) => e.preventDefault()} 
@@ -103,7 +103,7 @@ const EditBlog = () => {
                     </div>
                 </form>
             </>
-        }
+      }
         {!editTitle &&
             <>
                <h2 className="font-anton text-[#856c5c] text-xl mt-4">Blog not Found.</h2>

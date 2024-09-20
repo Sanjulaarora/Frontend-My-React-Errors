@@ -1,10 +1,12 @@
-import React from 'react';
-import SignUp from '../components/SignUp';
-import Comments from '../components/Comments';
+import React, { Suspense } from 'react';
+//import SignUp from '../components/SignUp';
+//import Comments from '../components/Comments';
 import LinkedIn from '../images/icons8-linkedin-100.png';
 import GitHub from '../images/icons8-github-100.png';
 import { useContext } from 'react';
 import AppContext from '../context/AppContext';
+const SignUp = React.lazy(() => import('../components/SignUp'));
+const Comments = React.lazy(() => import('../components/Comments'));
 
 const About = () => {
   const { user } = useContext(AppContext);
@@ -18,21 +20,25 @@ const About = () => {
           {!user &&
            <>
              <p className="font-pacifico text-gray-500 text-sm media426:text-xl media769:text-2xl text-center mt-2">You can SignUp & place a comment!</p>
-             <SignUp />
+             <Suspense fallback={<div>Loading...</div>}>
+               <SignUp />
+             </Suspense>
             </>  
           }
           {user &&
             <>
               <p className="font-pacifico text-gray-500 text-sm media426:text-xl media769:text-2xl text-center">Add a Comment!</p>
-              <Comments />
+              <Suspense fallback={<div>Loading...</div>}>
+               <Comments />
+             </Suspense>
             </> 
           }
         </div>
         <p className="font-pacifico text-xl media426:text-2xl media769:text-3xl text-gray-500 mt-12 media426:mt-60 ml-28 media426:ml-14 media769:ml-24">or</p>
         <div id="contact via" className="flex flex-col justify-center items-center space-y-4 mt-8 media426:mt-24 ml-[72px] media426:ml-[88px] media769:ml-32 h-48 media426:h-56 media769:h-72 w-28 media426:w-32 media769:w-48 rounded-xl shadow-2xl" >
           <p className="font-anton text-[#56463c] text-xs media426:text-sm media769:text-lg"> We can connect via </p>
-          <a href="https://www.linkedin.com/in/sanjula-arora-30927b244" target="_blank" rel="noreferrer"><img className="bg-[#56463c] h-12 media426:h-16 media769:h-20 w-12 media426:w-16 media769:w-20 rounded-md hover:scale-110" src={LinkedIn} alt="linkedin" /></a>
-          <a href="https://github.com/Sanjulaarora" target="_blank" rel="noreferrer"><img className="bg-[#56463c] h-12 media426:h-16 media769:h-20 w-12 media426:w-16 media769:w-20 rounded-md hover:scale-110" src={GitHub} alt="github" /></a>
+          <a href="https://www.linkedin.com/in/sanjula-arora-30927b244" target="_blank" rel="noreferrer"><img className="bg-[#56463c] h-12 media426:h-16 media769:h-20 w-12 media426:w-16 media769:w-20 rounded-md hover:scale-110" src={LinkedIn} alt="linkedin" loading="lazy" /></a>
+          <a href="https://github.com/Sanjulaarora" target="_blank" rel="noreferrer"><img className="bg-[#56463c] h-12 media426:h-16 media769:h-20 w-12 media426:w-16 media769:w-20 rounded-md hover:scale-110" src={GitHub} alt="github" loading="lazy" /></a>
         </div>
       </section>   
     </main>

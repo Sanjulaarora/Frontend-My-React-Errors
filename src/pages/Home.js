@@ -1,9 +1,11 @@
-import React from 'react';
-import Feed from '../components/Feed';
+import React, { Suspense } from 'react';
+//import Feed from '../components/Feed';
 import FilterSideBar from '../components/FilterSideBar';
 import Pagination from '../components/Pagination';
 import { useState, useContext } from 'react';
 import AppContext from '../context/AppContext';
+
+const Feed = React.lazy(() => import('../components/Feed'));
 
 const Home = () => {
   const {searchResults, fetchError, isLoading} = useContext(AppContext);
@@ -22,7 +24,9 @@ const Home = () => {
           {!isLoading && fetchError && <p className="font-anton text-sm media426:text-xl text-center text-red-600 mt-4">{fetchError}</p>}
           {!isLoading && !fetchError && (searchResults.length ? 
             <div id="blog-cards" className="flex flex-wrap mr-12">
-              <Feed blogs={currentBlogs} />
+              <Suspense fallback={<div>Loading...</div>}>
+                <Feed blogs={currentBlogs} />
+              </Suspense>
             </div>
             : 
             <div className="mx-auto">
