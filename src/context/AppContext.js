@@ -99,6 +99,6 @@ export const AppProvider = ({ children }) => {
       {children}
     </AppContext.Provider>
   )
-  }
+}
 
 export default AppContext;
